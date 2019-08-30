@@ -21,6 +21,10 @@
   text-align: center;
 }
 
+#chart_title {
+  text-align: center;
+}
+
 #result {
   width: 100%;
   /*padding: 10px 0;*/
