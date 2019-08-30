@@ -1,17 +1,19 @@
 let players = {
-  Andrew: {mean: 18.6234018516199, sd:7.00720415042141, change: -2}, 
-  Ben: {mean: 27.9813457994074, sd:0.78937613956878, change: 0}, 
-  Chloe: {mean: 16.7025392606725, sd:4.70919687010181, change: 1}, 
-  Gustavo: {mean: 30.6551809572175, sd:1.20746193811524}, 
-  Isabel: {mean: 25.8185460317544, sd:4.75256201955619, change: 1}, 
-  Jeff: {mean: 26.1325063264343, sd:2.42170131612325, change: 1}, 
-  Laury: {mean: 20.5574923642807, sd:8.14797124968606}, 
-  Mark: {mean: 25.4464048234686, sd:2.10474596737193}, 
-  Matt: {mean: 24.0823564012002, sd:0.578286632008557}, 
-  Neil: {mean: 28.650597745385, sd:3.36116916830208, change: -1}, 
-  Peter: {mean: 29.4884226409711, sd:1.7009307693293}, 
-  Sherry: {mean: 24.4431354157408, sd:1.18826311273656}, 
-  Steve: {mean: 21.9822048968423, sd:2.6406542185273}, 
+  Andrew: {mean: 14.913, sd: 1.485, change: -3}, 
+  Ben: {mean: 23.429, sd: 0.941, change: -2}, 
+  Chloe: {mean: 10.489, sd: 1.745, change: -4}, 
+  Gustavo: {mean: 24.299, sd: 1.007, change: -1}, 
+  Isabel: {mean: 14.606, sd: 1.105, change: 0}, 
+  Jeff: {mean: 21.903, sd: 1.687, change: 0}, 
+  Jessica: {mean: 17.955, sd: 3.797, change: 'NR'}, 
+  Laury: {mean: 19.311, sd: 2.144, change: 3}, 
+  Lena: {mean: 26.283, sd: 3.557, change: 'NR'}, 
+  Mark: {mean: 26.303, sd: 1.448, change: 7}, 
+  Matt: {mean: 22.342, sd: 0.915, change: -1}, 
+  Neil: {mean: 16.518, sd: 1.36, change: -4}, 
+  Peter: {mean: 24.039, sd: 1.037, change: 0}, 
+  Sherry: {mean: 17.8, sd: 0.972, change: -3}, 
+  Steve: {mean: 16.299, sd: 1.111, change: 0}, 
 }
 
 let skill_array = []
@@ -36,10 +38,12 @@ $(document).ready(function () {
       var new_row = table.append('<tr>')
       new_row.append(`<th scope="row">${idx+1}</th><td>${player[0]}</td><td>${player[1].toFixed(1)}</td>`)
       var change_indicator = ""
-      if (player[2] != undefined & player[2] != 0) {
+      if (player[2] != undefined & player[2] != 0 & player[2] != 'NR') {
         if (player[2] > 0) {change_indicator += '<span data-feather="arrow-up" style="color: green;"></span>'}
         if (player[2] < 0) {change_indicator += '<span data-feather="arrow-down" style="color: red;"></span>'}
         change_indicator += Math.abs(player[2])
+      } else if (player[2] == 'NR') {
+        change_indicator = 'NR'
       } else {
         change_indicator = '-'
       }
@@ -68,7 +72,9 @@ $('#input_teams').change(function (e){
 })
 
 $('#btn_random_matchup').click(function () {
-  let player_names = skill_array.map(x => x[0])
+  let player_names = skill_array.map(function (x) {
+    return x[0]
+  })
   
   $('#input_teams').find('select').each(function (idx, player_select) {
     let randomIndex = Math.floor(Math.random()*player_names.length)
@@ -98,11 +104,11 @@ function createChart1 () {
     },
 
     title: {
-      text: 'Estimate Range'
+      text: null // 'Estimate Range'
     },
 
     subtitle: {
-      text: 'Official CRAPPR score is the lower bound'
+      text: null // 'Official CRAPPR score is the lower bound'
     },
 
     xAxis: {
