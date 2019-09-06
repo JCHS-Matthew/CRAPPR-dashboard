@@ -1,3 +1,4 @@
+let leaderboard_date = "9/5/2019"
 let players = {
   Andrew: {mean: 16.302, sd: 1.285, change: 2}, 
   Ben: {mean: 24.229, sd: 0.9, change: 3}, 
@@ -51,6 +52,8 @@ $(document).ready(function () {
       table.append('</tr>')
     })
 
+  $('#leaderboard_date').html(`Updated ${leaderboard_date}`)
+  
   createChart1()
 
   feather.replace()
