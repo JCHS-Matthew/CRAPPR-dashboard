@@ -6,7 +6,7 @@ Ben: {mean: 25.742, sd: 0.82, change: -1},
 
 Chloe: {mean: 10.204, sd: 1.155, change: 0}, 
 
-Gustavo: {mean: 23.666, sd: 0.84, change: 1}, 
+Gustavo: {mean: 23.666, sd: 0.84, change: 0}, 
 
 Isabel: {mean: 14.465, sd: 0.915, change: 0}, 
 
