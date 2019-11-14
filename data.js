@@ -15,7 +15,6 @@ Matt: {mean: 22.857, sd: 0.815, change: 0},
 Mensur: {mean: 17.721, sd: 3.168, change: 0}, 
 Neil: {mean: 16.486, sd: 1.338, change: 0}, 
 Peter: {mean: 23.432, sd: 0.816, change: 0}, 
-Ricardo: {mean: 20.686, sd: 4.429, change: 0}, 
 Sherry: {mean: 18.217, sd: 0.843, change: 0}, 
 Steve: {mean: 16.346, sd: 1.125, change: 0}, 
 }
