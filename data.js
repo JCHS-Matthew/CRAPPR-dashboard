@@ -4,7 +4,7 @@ Andrew: {mean: 22.882, sd: 0.821, change: -1},
 
 Ben: {mean: 25.849, sd: 0.809, change: 0}, 
 
-Chloe: {mean: 10.405, sd: 1.139, change: }, 
+Chloe: {mean: 10.405, sd: 1.139, change: 0}, 
 
 Gustavo: {mean: 24.425, sd: 0.819, change: 0}, 
 
