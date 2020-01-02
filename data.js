@@ -1,4 +1,4 @@
-let leaderboard_date = "1/2/2019"
+let leaderboard_date = "1/2/2020"
 let players = {
 Peter: {mean: 23.128, sd: 0.808, change: 0}, 
 
