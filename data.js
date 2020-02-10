@@ -30,8 +30,6 @@ Jessica: {mean: 14.976, sd: 0.955, change: 2},
 
 Lena: {mean: 26.476, sd: 2.354, change: 0}, 
 
-Ricardo: {mean: 23.445, sd: 3.564, change: 0}, 
-
 Mensur: {mean: 16.63, sd: 2.377, change: 0}, 
 
 James: {mean: 9.066, sd: 1.656, change: 0}, 
