@@ -3,6 +3,4 @@
  
 Ratings are computed using a modified implementation of the Microsoft TrueSkill algorithm, following the C# implementation by @moserware (https://github.com/moserware/Skills). All the other repos that reference TrueSkill have a line in their readme saying that TrueSkill is a Microsoft copyright and you can't use if for commercial purposes, so I'll say that too and just assume 1) that it's true, and 2) that it's a reasonable CYA.
  
- _A Pen created at CodePen.io. Original URL: [https://codepen.io/JCHS-Matthew/pen/qBWNomO](https://codepen.io/JCHS-Matthew/pen/qBWNomO).
-
- 
+ URL: [http://crappr.science/](http://crappr.science/)
