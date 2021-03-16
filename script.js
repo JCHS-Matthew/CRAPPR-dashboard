@@ -7,22 +7,22 @@ $(document).ready(function () {
     $('#player3').append(`<option value="${player}">${player}</option>`)
     $('#player4').append(`<option value="${player}">${player}</option>`)
     player_data = players[player]
-    skill_array.push([player, player_data.mean - 3*player_data.sd, player_data.change, player_data.mean, player_data.sd])
+    skill_array.push([player, player_data.mean - 3 * player_data.sd, player_data.change, player_data.mean, player_data.sd])
   })
 
   skill_array
     .sort(function (a, b) {
       return b[1] - a[1]
     })
-    .forEach(function (player, idx) {  
+    .forEach(function (player, idx) {
       // Leaderboard
       var table = $('#leaderboard > tbody')
       var new_row = table.append('<tr>')
-      new_row.append(`<th scope="row">${idx+1}</th><td>${player[0]}</td><td>${player[1].toFixed(1)}</td>`)
+      new_row.append(`<th scope="row">${idx + 1}</th><td>${player[0]}</td><td>${player[1].toFixed(1)}</td>`)
       var change_indicator = ""
       if (player[2] != undefined & player[2] != 0 & player[2] != 'NR') {
-        if (player[2] > 0) {change_indicator += '<span data-feather="arrow-up" style="color: green;"></span>'}
-        if (player[2] < 0) {change_indicator += '<span data-feather="arrow-down" style="color: red;"></span>'}
+        if (player[2] > 0) { change_indicator += '<span data-feather="arrow-up" style="color: green;"></span>' }
+        if (player[2] < 0) { change_indicator += '<span data-feather="arrow-down" style="color: red;"></span>' }
         change_indicator += Math.abs(player[2])
       } else if (player[2] == 'NR') {
         change_indicator = 'NR'
@@ -34,24 +34,24 @@ $(document).ready(function () {
     })
 
   $('#leaderboard_date').html(`Updated ${leaderboard_date}`)
-  
+
   createChart1()
 
   feather.replace()
 
 }) // end document.ready
 
-$('#input_teams').change(function (e){
+$('#input_teams').change(function (e) {
   let p1 = players[$('#player1').val()]
   let p2 = players[$('#player2').val()]
   let p3 = players[$('#player3').val()]
   let p4 = players[$('#player4').val()]
 
   let skill_diff = (p1.mean + p2.mean) - (p3.mean + p4.mean)
-  let game_denom = Math.sqrt(4*(25/6)**2 + (p1.sd**2 + p2.sd**2 + p3.sd**2 + p4.sd**2))
-  let predict = (1 - math.erf((0 - (skill_diff/game_denom) ) / Math.sqrt(2) )) / 2
+  let game_denom = Math.sqrt(4 * (25 / 6) ** 2 + (p1.sd ** 2 + p2.sd ** 2 + p3.sd ** 2 + p4.sd ** 2))
+  let predict = (1 - math.erf((0 - (skill_diff / game_denom)) / Math.sqrt(2))) / 2
 
-  $('#predict').html((100*predict).toFixed(1)+'%')
+  $('#predict').html((100 * predict).toFixed(1) + '%')
 
 })
 
@@ -59,26 +59,26 @@ $('#btn_random_matchup').click(function () {
   let player_names = skill_array.map(function (x) {
     return x[0]
   })
-  
+
   $('#input_teams').find('select').each(function (idx, player_select) {
-    let randomIndex = Math.floor(Math.random()*player_names.length)
+    let randomIndex = Math.floor(Math.random() * player_names.length)
     let randomPlayer = player_names.splice(randomIndex, 1)[0]
     $(`#${player_select.id} option[value="${randomPlayer}"]`).attr('selected', true)
   })
-  
+
   $('#input_teams').trigger('change')
-  
+
 })
 
 
-function createChart1 () {
+function createChart1() {
   let player_names = []
   let player_range = []
   let player_mean = []
 
   skill_array.forEach(function (player) {
     player_names.push(player[0])
-    player_range.push([player[3] - 3*player[4], player[3] + 3*player[4]])
+    player_range.push([player[3] - 3 * player[4], player[3] + 3 * player[4]])
     player_mean.push(player[3])
   })
   Highcharts.chart('chart1', {
