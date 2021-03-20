@@ -1,6 +1,14 @@
 let skill_array = []
 
+
 $(document).ready(function () {
+  // add page components
+  $('#header').load('header.html')
+  $.get('nav.html', function(data) {
+      $('#first_row').prepend(data)
+      feather.replace()
+  }) 
+  
   Object.keys(players).forEach(function (player, idx) {
     $('#player1').append(`<option value="${player}">${player}</option>`)
     $('#player2').append(`<option value="${player}">${player}</option>`)
@@ -36,8 +44,6 @@ $(document).ready(function () {
   $('#leaderboard_date').html(`Updated ${leaderboard_date}`)
 
   createChart1()
-
-  feather.replace()
 
 }) // end document.ready
 
