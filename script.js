@@ -2,10 +2,10 @@ let skill_array = []
 
 $(document).ready(function () {
   Object.keys(players).forEach(function (player, idx) {
-    $('#player1').append(`<option value="${player}">${player}</option>`)
-    $('#player2').append(`<option value="${player}">${player}</option>`)
-    $('#player3').append(`<option value="${player}">${player}</option>`)
-    $('#player4').append(`<option value="${player}">${player}</option>`)
+    _.range(1, 5).forEach(x => {
+      $(`#player${x}`).append(`<option value="${player}">${player}</option>`)
+    })
+
     player_data = players[player]
     skill_array.push([player, player_data.mean - 3 * player_data.sd, player_data.change, player_data.mean, player_data.sd])
   })
@@ -20,14 +20,14 @@ $(document).ready(function () {
       var new_row = table.append('<tr>')
       new_row.append(`<th scope="row">${idx + 1}</th><td>${player[0]}</td><td>${player[1].toFixed(1)}</td>`)
       var change_indicator = ""
-      if (player[2] != undefined & player[2] != 0 & player[2] != 'NR') {
+      if (player[2] == 'NR') {
+        change_indicator = 'NR'
+      } else if (player[2] == 0) {
+        change_indicator = '-'
+      } else if (player[2] != undefined) {
         if (player[2] > 0) { change_indicator += '<span data-feather="arrow-up" style="color: green;"></span>' }
         if (player[2] < 0) { change_indicator += '<span data-feather="arrow-down" style="color: red;"></span>' }
         change_indicator += Math.abs(player[2])
-      } else if (player[2] == 'NR') {
-        change_indicator = 'NR'
-      } else {
-        change_indicator = '-'
       }
       new_row.append(`<td>${change_indicator}</td>`)
       table.append('</tr>')
