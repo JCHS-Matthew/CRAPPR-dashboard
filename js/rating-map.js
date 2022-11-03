@@ -212,6 +212,7 @@ var data = [
 Highcharts.mapChart('map', {
   chart: {
     map: 'custom/world-robinson-lowres',
+    height: '50%',
 
   },
   title: { text: 'Average CRAPPR Rating by Country' },
