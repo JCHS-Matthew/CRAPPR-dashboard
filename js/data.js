@@ -1,9 +1,9 @@
 let leaderboard_date = "12/1/2022"
 let players = {
 Andres: { mean: 25.34974, sd: .6622876, change: 0},
-Arun: { mean: 20.66228, sd: .8278791, change: -1},
+Arun: { mean: 20.74591, sd: .8203805, change: -1},
 Ben: { mean: 26.73208, sd: .5740153, change: 0},
-David_S: { mean: 21.07193, sd: 1.160367, change: 0},
+David_S: { mean: 21.13666, sd: 1.133733, change: 0},
 Jack: { mean: 22.29566, sd: 1.683587, change: 0},
 Jeffrey: { mean: 20.34969, sd: .9020563, change: 0},
 Karen: { mean: 14.57012, sd: 1.910734, change: 0},
@@ -13,9 +13,9 @@ Neil: { mean: 20.94256, sd: .7328827, change: -1},
 Nikhil: { mean: 23.65711, sd: 3.309087, change: 1},
 Niraj: { mean: 12.90949, sd: 2.078175, change: 0},
 Raina: { mean: 26.50852, sd: 6.245625, change: 0},
-Rowan: { mean: 23.05257, sd: .8181174, change: 0},
+Rowan: { mean: 23.03246, sd: .811862, change: 0},
 Sherry_J: { mean: 24.53942, sd: 1.890022, change: 2},
-Victor: { mean: 17.77053, sd: 1.071485, change: 0},
+Victor: { mean: 17.58711, sd: 1.051087, change: 0},
 Yumeng: { mean: 18.96065, sd: 1.560465, change: 0},
 Zeeshan: { mean: 17.91819, sd: .9070474, change: 0},
 }
